@@ -1,10 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "X via",
+  "name": "X via (Firefox)",
   "version": "1.2.0",
-  "minimum_chrome_version": "111",
-  "description": "X の投稿のページで、日付の横に「Twitter for iPhone」などの投稿元をもう一度表示し、時刻を秒まで出せる非公式の拡張",
+  "description": "X viaの非公式なFirefox移植版 Twitter(旧X)において投稿の時刻を秒単位まで表示、そして投稿の時刻の横に投稿元のプラットフォームを表示します",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "x-via-firefox@app.nercone.dev",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
   "permissions": ["storage"],
+  "host_permissions": ["https://x.com/*", "https://twitter.com/*"],
   "action": { "default_title": "X via", "default_popup": "popup/popup.html" },
   "content_scripts": [
     {
